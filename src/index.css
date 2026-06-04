@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fff5f9;
+  color: #3a1a2e;
+  overflow-x: hidden;
+}
+
+.pixel-border {
+  border: 3px solid #3a7bd5;
+  box-shadow: 4px 4px 0 #ff4488;
+}
+.pixel-border-pink {
+  border: 3px solid #ff4488;
+  box-shadow: 4px 4px 0 #3a7bd5;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-14px) rotate(3deg); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  30%       { transform: scale(1.18); }
+  60%       { transform: scale(0.95); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes bounce-in {
+  0%   { opacity: 0; transform: scale(0.5) translateY(30px); }
+  70%  { transform: scale(1.08) translateY(-5px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(-5deg); }
+  75%       { transform: rotate(5deg); }
+}
+
+.float      { animation: float 3s ease-in-out infinite; }
+.float-slow { animation: floatSlow 4s ease-in-out infinite; }
+.sparkle    { animation: sparkle 1.5s ease-in-out infinite; }
+.heartbeat  { animation: heartbeat 1.2s ease-in-out infinite; }
+.bounce-in  { animation: bounce-in 0.7s cubic-bezier(.36,.07,.19,.97) both; }
+.wiggle     { animation: wiggle 0.5s ease-in-out; }
+.marquee    { animation: marquee 18s linear infinite; }
+
+.bg-pixel-dots {
+  background-image: radial-gradient(circle, #ffb3cc 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+.bg-candy-stripe {
+  background: repeating-linear-gradient(
+    45deg, #fff5f9 0px, #fff5f9 12px, #ffe4ef 12px, #ffe4ef 24px
+  );
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #ff85ad 0%, #fff 40%, #ff85ad 60%, #6ec6ff 80%, #ff85ad 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #fff0f5; }
+::-webkit-scrollbar-thumb { background: #ff85ad; border-radius: 10px; }
