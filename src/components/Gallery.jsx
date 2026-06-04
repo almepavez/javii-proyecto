@@ -53,7 +53,7 @@ const photos = [
   },
   {
     id: 9,
-    url: 'https://images.unsplash.com/photo-1464349095431-e9a21285b19f?w=600&q=80',
+    url: 'https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=600&q=80',
     label: '🧁 Cupcakes',
     cat: 'muffins',
   },
