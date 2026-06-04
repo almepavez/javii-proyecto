@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import logo from '../img/logo_javii.png'
 
 const navLinks = [
-  { label: '🏠 Inicio',    href: 'inicio' },
+  { label: '🏠 Inicio', href: 'inicio' },
   { label: '🍰 Productos', href: 'productos' },
-  { label: '💌 Pedidos',   href: 'pedidos' },
-  { label: '📸 Galería',   href: 'galeria' },
+  { label: '💌 Pedidos', href: 'pedidos' },
+  { label: '📸 Galería', href: 'galeria' },
 ]
 
 export default function Navbar() {
@@ -45,7 +46,7 @@ export default function Navbar() {
           className="flex items-center gap-2 group"
         >
           <img
-            src="/src/img/logo_javii.png"
+            src={logo}
             alt="Javii Cakes"
             className="h-12 object-contain"
             style={{ imageRendering: 'pixelated' }}
