@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import logo from '../img/logo_javii.png'
 
 const floatingEmojis = ['🍓', '🍰', '🧁', '🍫', '🎂', '🍬', '💕', '⭐', '🎀', '🌸']
 
@@ -50,7 +51,7 @@ export default function Hero() {
         {/* Logo principal */}
         <div className="mb-4 float-slow">
           <img
-src="/src/img/logo_javii.png"
+            src={logo}
             alt="Javii Cakes & Sweets"
             className="w-72 md:w-96 lg:w-[460px] object-contain drop-shadow-2xl"
             style={{ imageRendering: 'pixelated' }}
