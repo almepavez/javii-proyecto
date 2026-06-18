@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import logo from '../img/logo_javii.png'
+import logo from '../img/logo_texto.png'
 
 const navLinks = [
   { label: '🏠 Inicio', href: 'inicio' },
@@ -28,9 +28,16 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: 'rgba(255,245,249,0.92)', backdropFilter: 'blur(12px)', borderBottom: '3px solid #ffb3cc' }}>
-      {/* Top ticker */}
-      <div className="overflow-hidden py-1" style={{ background: '#ff85ad' }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        background: 'rgba(255,245,236,0.92)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '3px solid #C46877',
+      }}
+    >
+      {/* Ticker */}
+      <div className="overflow-hidden py-1" style={{ background: '#8B1A2E' }}>
         <div className="flex whitespace-nowrap marquee">
           {Array(6).fill('🍓 Alfajores • 🍰 Queques • 🍫 Brownies • 🧁 Muffins • 🎂 Tortas • 🥐 Cuchuflís • ').map((t, i) => (
             <span key={i} className="text-white font-pixel text-xs mr-4">{t}</span>
@@ -43,14 +50,9 @@ export default function Navbar() {
         <a
           href="#inicio"
           onClick={(e) => handleNavClick(e, 'inicio')}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-2"
         >
-          <img
-            src={logo}
-            alt="Javii Cakes"
-            className="h-12 object-contain"
-            style={{ imageRendering: 'pixelated' }}
-          />
+          <img src={logo} alt="Kitty Dulcecitos" className="h-12 object-contain" />
         </a>
 
         {/* Desktop links */}
@@ -60,17 +62,21 @@ export default function Navbar() {
               key={link.href}
               href={`#${link.href}`}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="font-cute font-bold text-sm px-4 py-2 rounded-full transition-all duration-200 hover:scale-105"
-              style={{ color: '#ff4488', border: '2px solid #ffb3cc' }}
+              className="font-bold text-sm px-4 py-2 rounded-full transition-all duration-200 hover:scale-105"
+              style={{
+                color: '#8B1A2E',
+                border: '2px solid #C46877',
+                fontFamily: '"Plus Jakarta Sans", -apple-system, sans-serif',
+              }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = '#ff85ad'
-                e.currentTarget.style.color = '#fff'
-                e.currentTarget.style.borderColor = '#ff85ad'
+                e.currentTarget.style.background = '#8B1A2E'
+                e.currentTarget.style.color = '#FFF5EC'
+                e.currentTarget.style.borderColor = '#8B1A2E'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.background = 'transparent'
-                e.currentTarget.style.color = '#ff4488'
-                e.currentTarget.style.borderColor = '#ffb3cc'
+                e.currentTarget.style.color = '#8B1A2E'
+                e.currentTarget.style.borderColor = '#C46877'
               }}
             >
               {link.label}
@@ -79,8 +85,13 @@ export default function Navbar() {
           <a
             href="#pedidos"
             onClick={(e) => handleNavClick(e, 'pedidos')}
-            className="font-cute font-extrabold text-sm px-5 py-2 rounded-full text-white transition-all hover:scale-105 hover:shadow-lg"
-            style={{ background: 'linear-gradient(135deg, #ff85ad, #ff4488)', boxShadow: '3px 3px 0 #3a7bd5' }}
+            className="font-bold text-sm px-5 py-2 rounded-full text-white transition-all hover:scale-105"
+            style={{
+              background: 'linear-gradient(135deg, #A83248, #8B1A2E)',
+              boxShadow: '3px 3px 0 #3D1A0A',
+              fontFamily: '"Plus Jakarta Sans", -apple-system, sans-serif',
+              fontWeight: 700,
+            }}
           >
             ¡Pedir ahora! 🎀
           </a>
@@ -89,7 +100,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           className="md:hidden font-pixel text-lg"
-          style={{ color: '#ff4488' }}
+          style={{ color: '#8B1A2E' }}
           onClick={() => setOpen(!open)}
         >
           {open ? '✕' : '☰'}
@@ -98,14 +109,21 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-4 pb-4 flex flex-col gap-2" style={{ background: 'rgba(255,245,249,0.97)' }}>
+        <div
+          className="md:hidden px-4 pb-4 flex flex-col gap-2"
+          style={{ background: 'rgba(255,245,236,0.97)' }}
+        >
           {navLinks.map(link => (
             <a
               key={link.href}
               href={`#${link.href}`}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="font-cute font-bold text-sm px-4 py-2 rounded-xl text-center"
-              style={{ color: '#ff4488', border: '2px solid #ffb3cc' }}
+              className="font-bold text-sm px-4 py-2 rounded-xl text-center"
+              style={{
+                color: '#8B1A2E',
+                border: '2px solid #C46877',
+                fontFamily: '"Plus Jakarta Sans", -apple-system, sans-serif',
+              }}
             >
               {link.label}
             </a>
@@ -113,8 +131,13 @@ export default function Navbar() {
           <a
             href="#pedidos"
             onClick={(e) => handleNavClick(e, 'pedidos')}
-            className="font-cute font-extrabold text-sm px-5 py-2 rounded-full text-white text-center"
-            style={{ background: 'linear-gradient(135deg, #ff85ad, #ff4488)', boxShadow: '3px 3px 0 #3a7bd5' }}
+            className="font-bold text-sm px-5 py-2 rounded-full text-white text-center"
+            style={{
+              background: 'linear-gradient(135deg, #A83248, #8B1A2E)',
+              boxShadow: '3px 3px 0 #3D1A0A',
+              fontFamily: '"Plus Jakarta Sans", -apple-system, sans-serif',
+              fontWeight: 700,
+            }}
           >
             ¡Pedir ahora! 🎀
           </a>
